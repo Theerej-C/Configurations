@@ -64,6 +64,14 @@ use 'hrsh7th/cmp-path'
 use 'hrsh7th/cmp-cmdline'
 use 'hrsh7th/cmp-vsnip'
 use 'hrsh7th/vim-vsnip'
+use {
+  'nvim-tree/nvim-tree.lua',
+}
+use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.5',
+-- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

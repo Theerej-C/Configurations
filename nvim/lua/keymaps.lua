@@ -5,18 +5,21 @@ local term_opts = { silent = true }
 
 local keymap = vim.keymap.set
 
-
+local builtin = require('telescope.builtin')
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
+keymap('n', '<leader>ff', builtin.find_files, {})
+keymap('n', '<leader>fg', builtin.live_grep, {})
+keymap('n', '<leader>fb', builtin.buffers, {})
+keymap('n', '<leader>fh', builtin.help_tags, {})
 
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
